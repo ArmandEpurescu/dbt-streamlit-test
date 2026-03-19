@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: mart_leads_per_active_listing
+    description: |
+      Daily business mart showing lead density by region and property type.
+      Active listing definition used here: listing created on or before metric_date
+      and updated within the previous 30 days.
+    columns:
+      - name: metric_date
+        tests:
+          - not_null
+      - name: region
+        tests:
+          - not_null
+      - name: property_type
+        tests:
+          - not_null
+      - name: active_listing_count
+        tests:
+          - not_null
+      - name: leads_count
+        tests:
+          - not_null
+      - name: leads_per_active_listing
+        tests:
+          - not_null

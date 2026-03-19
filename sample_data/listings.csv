@@ -1,0 +1,31 @@
+listing_id,property_type,city,region,price,created_at,updated_at,agent_id
+L001,apartment,Marseille,Provence-Alpes-Côte d'Azur,266164,2025-10-17,2025-10-30,A1002
+L002,apartment,Aix-en-Provence,Provence-Alpes-Côte d'Azur,296255,2025-09-29,2025-10-01,A1002
+L003,apartment,Mérignac,Nouvelle-Aquitaine,216144,2025-08-17,2025-10-10,A1001
+L004,parking,Toulouse,Occitanie,36568,2025-10-19,2025-10-28,A1007
+L005,apartment,Paris,Île-de-France,379260,2025-10-09,2025-10-18,A1007
+L006,apartment,Grenoble,Auvergne-Rhône-Alpes,259216,2025-10-03,2025-10-06,A1004
+L007,apartment,Marseille,Provence-Alpes-Côte d'Azur,267114,2025-10-19,2025-10-28,A1004
+L008,apartment,Poitiers,Nouvelle-Aquitaine,261136,2025-09-16,2025-10-15,A1008
+L009,apartment,Nice,Provence-Alpes-Côte d'Azur,274781,2025-09-25,2025-09-30,A1005
+L010,house,Montpellier,Occitanie,409204,2025-08-30,2025-09-17,A1002
+L011,apartment,Montreuil,Île-de-France,372619,2025-09-13,2025-09-22,A1008
+L012,parking,Bordeaux,Nouvelle-Aquitaine,1646,2025-09-16,2025-10-07,A1006
+L013,apartment,Montpellier,Occitanie,225697,2025-10-18,2025-10-31,A1002
+L014,house,Nice,Provence-Alpes-Côte d'Azur,483259,2025-10-19,2025-10-30,A1005
+L015,house,Nîmes,Occitanie,380051,2025-09-07,2025-10-19,A1006
+L016,apartment,Boulogne-Billancourt,Île-de-France,363037,2025-10-12,2025-10-27,A1001
+L017,apartment,Annecy,Auvergne-Rhône-Alpes,255227,2025-09-06,2025-10-01,A1008
+L018,apartment,Paris,Île-de-France,359008,2025-09-21,2025-09-29,A1007
+L019,house,Montpellier,Occitanie,384912,2025-09-08,2025-09-22,A1003
+L020,apartment,Paris,Île-de-France,366156,2025-09-27,2025-09-27,A1008
+L021,apartment,Toulouse,Occitanie,196068,2025-10-08,2025-10-21,A1006
+L022,apartment,Nîmes,Occitanie,204024,2025-08-22,2025-08-28,A1008
+L023,apartment,Montpellier,Occitanie,221629,2025-10-13,2025-10-28,A1007
+L024,apartment,Paris,Île-de-France,336681,2025-08-31,2025-09-10,A1002
+L025,apartment,Aix-en-Provence,Provence-Alpes-Côte d'Azur,263015,2025-10-07,2025-10-24,A1002
+L026,apartment,Aix-en-Provence,Provence-Alpes-Côte d'Azur,320300,2025-09-30,2025-10-24,A1003
+L027,apartment,Nice,Provence-Alpes-Côte d'Azur,294073,2025-10-11,2025-10-14,A1008
+L028,apartment,Mérignac,Nouvelle-Aquitaine,215828,2025-10-08,2025-10-11,A1006
+L029,house,Nice,Provence-Alpes-Côte d'Azur,489580,2025-08-21,2025-08-23,A1004
+L030,apartment,Montpellier,Occitanie,231397,2025-10-23,2025-10-31,A1005

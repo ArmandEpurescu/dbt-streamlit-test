@@ -1,0 +1,8 @@
+aviv_case:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: aviv_case.duckdb
+      threads: 4
+      schema: analytics

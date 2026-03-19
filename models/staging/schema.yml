@@ -1,0 +1,52 @@
+version: 2
+
+seeds:
+  - name: listings
+    description: Mock daily listings feed used for the local demo.
+  - name: contacts
+    description: Mock leads feed used for the local demo.
+
+models:
+  - name: stg_listings
+    description: Cleaned and normalized property listings.
+    columns:
+      - name: listing_id
+        description: Unique listing identifier.
+        tests:
+          - not_null
+          - unique
+      - name: property_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['apartment', 'house', 'parking']
+      - name: price
+        tests:
+          - not_null
+      - name: created_at
+        tests:
+          - not_null
+      - name: updated_at
+        tests:
+          - not_null
+
+  - name: stg_contacts
+    description: Cleaned and normalized leads / contacts.
+    columns:
+      - name: contact_id
+        tests:
+          - not_null
+          - unique
+      - name: listing_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_listings')
+              field: listing_id
+      - name: contact_source
+        tests:
+          - accepted_values:
+              values: ['organic', 'paid', 'partner']
+      - name: contact_timestamp
+        tests:
+          - not_null

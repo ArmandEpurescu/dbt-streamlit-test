@@ -1,0 +1,101 @@
+metric_date,region,property_type,active_listing_count,leads_count,leads_per_active_listing
+2025-11-07,Provence-Alpes-Côte d'Azur,apartment,5,3,0.6
+2025-11-07,Occitanie,apartment,4,2,0.5
+2025-11-07,Île-de-France,apartment,2,1,0.5
+2025-11-07,Nouvelle-Aquitaine,apartment,3,0,0.0
+2025-11-07,Occitanie,house,1,0,0.0
+2025-11-07,Occitanie,parking,1,0,0.0
+2025-11-07,Provence-Alpes-Côte d'Azur,house,1,0,0.0
+2025-11-06,Île-de-France,apartment,2,2,1.0
+2025-11-06,Provence-Alpes-Côte d'Azur,apartment,5,1,0.2
+2025-11-06,Nouvelle-Aquitaine,apartment,3,0,0.0
+2025-11-06,Nouvelle-Aquitaine,parking,1,0,0.0
+2025-11-06,Occitanie,apartment,4,0,0.0
+2025-11-06,Occitanie,house,1,0,0.0
+2025-11-06,Occitanie,parking,1,0,0.0
+2025-11-06,Provence-Alpes-Côte d'Azur,house,1,0,0.0
+2025-11-05,Auvergne-Rhône-Alpes,apartment,1,1,1.0
+2025-11-05,Occitanie,house,1,1,1.0
+2025-11-05,Île-de-France,apartment,2,2,1.0
+2025-11-05,Provence-Alpes-Côte d'Azur,apartment,5,2,0.4
+2025-11-05,Nouvelle-Aquitaine,apartment,3,1,0.3333
+2025-11-05,Occitanie,apartment,4,1,0.25
+2025-11-05,Nouvelle-Aquitaine,parking,1,0,0.0
+2025-11-05,Occitanie,parking,1,0,0.0
+2025-11-05,Provence-Alpes-Côte d'Azur,house,1,0,0.0
+2025-11-04,Île-de-France,apartment,2,1,0.5
+2025-11-04,Auvergne-Rhône-Alpes,apartment,1,0,0.0
+2025-11-04,Nouvelle-Aquitaine,apartment,3,0,0.0
+2025-11-04,Nouvelle-Aquitaine,parking,1,0,0.0
+2025-11-04,Occitanie,apartment,4,0,0.0
+2025-11-04,Occitanie,house,1,0,0.0
+2025-11-04,Occitanie,parking,1,0,0.0
+2025-11-04,Provence-Alpes-Côte d'Azur,apartment,5,0,0.0
+2025-11-04,Provence-Alpes-Côte d'Azur,house,1,0,0.0
+2025-11-03,Île-de-France,apartment,2,3,1.5
+2025-11-03,Nouvelle-Aquitaine,apartment,3,1,0.3333
+2025-11-03,Occitanie,apartment,4,1,0.25
+2025-11-03,Auvergne-Rhône-Alpes,apartment,1,0,0.0
+2025-11-03,Nouvelle-Aquitaine,parking,1,0,0.0
+2025-11-03,Occitanie,house,1,0,0.0
+2025-11-03,Occitanie,parking,1,0,0.0
+2025-11-03,Provence-Alpes-Côte d'Azur,apartment,5,0,0.0
+2025-11-03,Provence-Alpes-Côte d'Azur,house,1,0,0.0
+2025-11-02,Provence-Alpes-Côte d'Azur,house,1,1,1.0
+2025-11-02,Île-de-France,apartment,2,2,1.0
+2025-11-02,Occitanie,apartment,4,1,0.25
+2025-11-02,Provence-Alpes-Côte d'Azur,apartment,5,1,0.2
+2025-11-02,Auvergne-Rhône-Alpes,apartment,1,0,0.0
+2025-11-02,Nouvelle-Aquitaine,apartment,3,0,0.0
+2025-11-02,Nouvelle-Aquitaine,parking,1,0,0.0
+2025-11-02,Occitanie,house,1,0,0.0
+2025-11-02,Occitanie,parking,1,0,0.0
+2025-11-01,Provence-Alpes-Côte d'Azur,house,1,1,1.0
+2025-11-01,Île-de-France,apartment,2,2,1.0
+2025-11-01,Occitanie,apartment,4,2,0.5
+2025-11-01,Provence-Alpes-Côte d'Azur,apartment,5,1,0.2
+2025-11-01,Auvergne-Rhône-Alpes,apartment,1,0,0.0
+2025-11-01,Nouvelle-Aquitaine,apartment,3,0,0.0
+2025-11-01,Nouvelle-Aquitaine,parking,1,0,0.0
+2025-11-01,Occitanie,house,1,0,0.0
+2025-11-01,Occitanie,parking,1,0,0.0
+2025-10-31,Provence-Alpes-Côte d'Azur,house,1,1,1.0
+2025-10-31,Île-de-France,apartment,2,1,0.5
+2025-10-31,Provence-Alpes-Côte d'Azur,apartment,6,2,0.3333
+2025-10-31,Occitanie,apartment,4,1,0.25
+2025-10-31,Auvergne-Rhône-Alpes,apartment,2,0,0.0
+2025-10-31,Nouvelle-Aquitaine,apartment,3,0,0.0
+2025-10-31,Nouvelle-Aquitaine,parking,1,0,0.0
+2025-10-31,Occitanie,house,1,0,0.0
+2025-10-31,Occitanie,parking,1,0,0.0
+2025-10-30,Occitanie,house,1,1,1.0
+2025-10-30,Occitanie,parking,1,1,1.0
+2025-10-30,Provence-Alpes-Côte d'Azur,house,1,1,1.0
+2025-10-30,Provence-Alpes-Côte d'Azur,apartment,7,1,0.1429
+2025-10-30,Auvergne-Rhône-Alpes,apartment,2,0,0.0
+2025-10-30,Nouvelle-Aquitaine,apartment,3,0,0.0
+2025-10-30,Nouvelle-Aquitaine,parking,1,0,0.0
+2025-10-30,Occitanie,apartment,4,0,0.0
+2025-10-30,Île-de-France,apartment,2,0,0.0
+2025-10-29,Île-de-France,apartment,3,2,0.6667
+2025-10-29,Provence-Alpes-Côte d'Azur,apartment,7,1,0.1429
+2025-10-29,Auvergne-Rhône-Alpes,apartment,2,0,0.0
+2025-10-29,Nouvelle-Aquitaine,apartment,3,0,0.0
+2025-10-29,Nouvelle-Aquitaine,parking,1,0,0.0
+2025-10-29,Occitanie,apartment,4,0,0.0
+2025-10-29,Occitanie,house,1,0,0.0
+2025-10-29,Occitanie,parking,1,0,0.0
+2025-10-29,Provence-Alpes-Côte d'Azur,house,1,0,0.0
+2025-10-28,Auvergne-Rhône-Alpes,apartment,2,1,0.5
+2025-10-28,Occitanie,apartment,4,2,0.5
+2025-10-28,Provence-Alpes-Côte d'Azur,apartment,7,2,0.2857
+2025-10-28,Nouvelle-Aquitaine,apartment,3,0,0.0
+2025-10-28,Nouvelle-Aquitaine,parking,1,0,0.0
+2025-10-28,Occitanie,house,1,0,0.0
+2025-10-28,Occitanie,parking,1,0,0.0
+2025-10-28,Provence-Alpes-Côte d'Azur,house,1,0,0.0
+2025-10-28,Île-de-France,apartment,3,0,0.0
+2025-10-27,Provence-Alpes-Côte d'Azur,apartment,7,2,0.2857
+2025-10-27,Occitanie,apartment,4,1,0.25
+2025-10-27,Auvergne-Rhône-Alpes,apartment,2,0,0.0
+2025-10-27,Nouvelle-Aquitaine,apartment,3,0,0.0

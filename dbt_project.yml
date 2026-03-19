@@ -1,0 +1,29 @@
+name: 'aviv_case'
+version: '1.0.0'
+config-version: 2
+
+profile: 'aviv_case'
+
+model-paths: ['models']
+analysis-paths: ['analyses']
+test-paths: ['tests']
+seed-paths: ['sample_data']
+macro-paths: ['macros']
+snapshot-paths: ['snapshots']
+
+models:
+  aviv_case:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+    marts:
+      +materialized: table
+
+seeds:
+  aviv_case:
+    +quote_columns: false
+
+snapshots:
+  aviv_case:
+    +target_schema: snapshots
