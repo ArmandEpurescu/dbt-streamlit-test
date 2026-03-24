@@ -13,7 +13,7 @@ jobs:
   dbt-tests:
     runs-on: ubuntu-latest
     env:
-      DBT_PROFILES_DIR: ~/.dbt
+      DBT_PROFILES_DIR: /home/runner/.dbt
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
