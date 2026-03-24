@@ -95,6 +95,41 @@ Optional connectivity check:
 dbt debug
 ```
 
+## Automation scripts
+
+### Windows (PowerShell)
+
+```powershell
+# full dbt lifecycle (creates .venv, installs deps, copies profile, runs dbt)
+./scripts/setup_and_run_dbt.ps1
+
+# launch Streamlit dashboard (optionally pass a fresh mart CSV)
+./scripts/run_streamlit.ps1 -CsvPath analyses/business_metric_preview.csv -Port 8501
+```
+
+### macOS / Linux (bash)
+
+```bash
+chmod +x scripts/setup_and_run_dbt.sh scripts/run_streamlit.sh
+
+# full dbt lifecycle
+./scripts/setup_and_run_dbt.sh
+
+# launch Streamlit dashboard
+./scripts/run_streamlit.sh analyses/business_metric_preview.csv
+```
+
+Both helpers reuse `.venv` by default; pass a different path as the first argument if you want to isolate environments.
+
+## Visualize the dbt lineage
+
+```bash
+dbt docs generate
+dbt docs serve --port 8080
+```
+
+Open `http://localhost:8080` to explore the DAG (staging ➜ intermediate ➜ mart). For a static view, load `target/index.html` in any browser after `dbt docs generate`.
+
 ## Project structure
 
 ```text

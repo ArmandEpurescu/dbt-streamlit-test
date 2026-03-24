@@ -1,0 +1,7 @@
+.venv/
+.dbt_local/
+aviv_case.duckdb
+dbt_packages/
+target/
+logs/
+presentations/
