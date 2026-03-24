@@ -1,8 +1,16 @@
 with metric_dates as (
-    select * from {{ ref('int_metric_dates') }}
+    select
+        metric_date
+    from {{ ref('int_metric_dates') }}
 ),
 listings as (
-    select * from {{ ref('stg_listings') }}
+    select
+        listing_id,
+        property_type,
+        region,
+        created_at,
+        updated_at
+    from {{ ref('stg_listings') }}
 )
 select
     d.metric_date,

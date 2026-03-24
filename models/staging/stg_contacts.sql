@@ -1,5 +1,10 @@
 with source as (
-    select * from {{ ref('contacts') }}
+    select
+        contact_id,
+        listing_id,
+        contact_source,
+        contact_timestamp
+    from {{ ref('contacts') }}
 ),
 renamed as (
     select

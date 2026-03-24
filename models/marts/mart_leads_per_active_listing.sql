@@ -1,5 +1,10 @@
 with active_listings as (
-    select * from {{ ref('int_active_listings_by_day') }}
+    select
+        metric_date,
+        listing_id,
+        property_type,
+        region
+    from {{ ref('int_active_listings_by_day') }}
 ),
 active_listing_counts as (
     select
@@ -35,5 +40,12 @@ final as (
         and a.region = l.region
         and a.property_type = l.property_type
 )
-select * from final
+select
+    metric_date,
+    region,
+    property_type,
+    active_listing_count,
+    leads_count,
+    leads_per_active_listing
+from final
 order by metric_date, region, property_type

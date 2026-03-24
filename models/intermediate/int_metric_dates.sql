@@ -15,4 +15,6 @@ spine as (
     from bounds,
     generate_series(min_metric_date, max_metric_date, interval 1 day) as t(metric_date)
 )
-select * from spine
+select
+    metric_date
+from spine

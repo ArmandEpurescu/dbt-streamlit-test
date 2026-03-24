@@ -9,6 +9,15 @@
     )
 }}
 
-select * from {{ ref('stg_listings') }}
+select
+    listing_id,
+    property_type,
+    city,
+    region,
+    price,
+    created_at,
+    updated_at,
+    agent_id
+from {{ ref('stg_listings') }}
 
 {% endsnapshot %}

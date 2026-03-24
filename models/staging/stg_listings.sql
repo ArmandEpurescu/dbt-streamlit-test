@@ -1,5 +1,14 @@
 with source as (
-    select * from {{ ref('listings') }}
+    select
+        listing_id,
+        property_type,
+        city,
+        region,
+        price,
+        created_at,
+        updated_at,
+        agent_id
+    from {{ ref('listings') }}
 ),
 renamed as (
     select
