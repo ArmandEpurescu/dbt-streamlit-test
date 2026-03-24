@@ -2,8 +2,7 @@
 
 This repository is an interview-sized solution for the AVIV / SeLoger analytics case.
 
-It is intentionally built as a **local demo** using **CSV seeds + DuckDB + dbt** so it can run end-to-end without a Snowflake account. That matches the brief: data may arrive via **S3 or local CSVs**, and it is fine to **simplify or simulate** parts of the setup. In production, the same modeling layer would sit behind an AWS -> Snowflake -> dbt pipeline. fileciteturn3file0L1-L29 fileciteturn3file1L1-L20
-
+It is intentionally built as a **local demo** using **CSV seeds + DuckDB + dbt** so it can run end-to-end without a Snowflake account. That matches the brief: data may arrive via **S3 or local CSVs**, and it is fine to **simplify or simulate** parts of the setup. In production, the same modeling layer would sit behind an AWS -> Snowflake -> dbt pipeline.
 ## What is included
 
 - `sample_data/`: mock CSVs used as dbt seeds
