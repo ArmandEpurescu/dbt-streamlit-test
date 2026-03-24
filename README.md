@@ -155,6 +155,38 @@ on_error = 'continue';
 
 That keeps the case aligned with their target stack without making the demo depend on cloud setup.
 
+## Snowflake ingestion runbook
+
+### External stage + COPY INTO job
+1. Define external stages that point directly at the dated S3 prefixes delivered by upstream systems, e.g. `create stage raw.seloger_stage url='s3://seloger-data-prod/' ...`.
+2. Land daily folders such as `s3://seloger-data-prod/listings/2026-03-25/` and `.../contacts/2026-03-25/`. A Dagster job (or similar) iterates over those prefixes, runs `COPY INTO raw.listings FROM @raw.seloger_stage/listings/2026-03-25/`, and records copy history for observability.
+3. Staging dbt models always select from the Snowflake stage / raw tables instead of S3 directly, so downstream SQL stays identical whether the data arrived through a manual load or a scheduled job.
+
+This COPY-based flow keeps tight control over retries, logging, and alerting—the things we normally want for SLA-backed data contracts.
+
+### Snowpipe option + validations
+- Snowpipe is the simpler zero-maintenance ingestion choice: create a pipe with `COPY INTO raw.listings FROM @raw.seloger_stage/listings/ pattern='.*[0-9]{4}-[0-9]{2}-[0-9]{2}/.*' FILE_FORMAT = ...`.
+- Observability is lighter than a Dagster-managed job, but we can still emit pipe load history to dashboards or push notifications.
+- We can embed validations directly in the pipe definition: use `COPY_OPTIONS = (ON_ERROR='ABORT_STATEMENT', MATCH_BY_COLUMN_NAME='CASE_INSENSITIVE')`, enforce required columns through file formats, and run `VALIDATION_MODE = 'RETURN_ERRORS'` dry runs before enabling auto-ingest.
+- Managing `STAGE`, `FILE FORMAT`, and `PIPE` objects via Terraform keeps schema/contract changes reviewed like any other infrastructure-as-code change.
+
+## Upstream data contract & bucket validation
+
+Before Snowflake sees a file, an AWS Lambda (triggered by the S3 PUT event) should enforce minimum guarantees:
+- Expect a control file per delivery (e.g. `control.json`) that states file counts, row counts, data date, and schema version; reject or quarantine deliveries that do not match.
+- Validate the CSV / parquet headers match the contract (column presence, order when relevant, basic datatype inference) and log the results in CloudWatch for auditing.
+- Sanity-check record counts (non-empty, within tolerance vs. previous day) so we catch truncation before analytics re-computes metrics.
+- Only after those checks pass do we call Snowflake (COPY job or Snowpipe REST endpoint) to ingest the batch.
+
+These validations keep "minimal viable data contract" enforcement outside the warehouse and provide a paper trail when upstream producers drift.
+
+## Materialization & performance guidance
+
+- Historical staging or intermediate models that scan large date ranges (e.g. the active-listing spine) should be incremental tables once volumes grow—process the latest `metric_date` window while retaining prior partitions.
+- BI-facing marts (like `mart_leads_per_active_listing`) should be materialized tables for fast dashboards; smaller dimensional tables can also be fully materialized because refresh cost is low.
+- Use views for temporary exploration or when we are iterating on a heavy query; once performance stabilizes, flip to an incremental/table materialization to control cost.
+- This mix keeps Snowflake credits predictable while letting us scale up the freshness of the highest-value models.
+
 ## Real-world considerations
 
 ### Schema drift
@@ -174,10 +206,16 @@ Minimum upstream guarantees:
 - controlled enums for `property_type` and `contact_source`
 - no negative prices
 - delivery SLA / naming convention
+- Lambda-level schema + row-count validation before Snowflake COPY / Snowpipe is invoked
+- Control/manifest files in each S3 folder so we can cross-check completeness
 
 ### Performance vs cost
-For this small KPI mart, a table is appropriate. At larger scale, I would move to an incremental table by `metric_date` with a recent backfill window. A view is simplest but can become expensive for repeated dashboard queries.
+For this small KPI mart, a table is appropriate. At larger scale, I would move to an incremental table by `metric_date` with a recent backfill window. A view is simplest but can become expensive for repeated dashboard queries, so graduating heavy queries to incremental or table materializations keeps compute predictable.
 
 ## Example business takeaway
 
 In the mock data, **apartments in Île-de-France** show the strongest lead density over the latest 14-day window, while parking inventory is materially weaker. That is enough to illustrate how marketplace, sales, or marketing teams could prioritize inventory types and regions.
+
+## Business readout artifact
+
+See `analyses/business_metric_insights.md` for the narrative version of this KPI: it captures the last 14 days, explains volatility pockets (e.g., Occitanie apartment droughts), and lists the recommended commercial/test actions so BI can plug it directly into executive updates.

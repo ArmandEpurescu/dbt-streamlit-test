@@ -13,4 +13,13 @@ renamed as (
         trim(cast(agent_id as varchar)) as agent_id
     from source
 )
-select * from renamed
+select
+    listing_id,
+    property_type,
+    city,
+    region,
+    price,
+    created_at,
+    updated_at,
+    agent_id
+from renamed

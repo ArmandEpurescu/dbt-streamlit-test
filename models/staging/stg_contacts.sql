@@ -10,4 +10,10 @@ renamed as (
         cast(contact_timestamp as date) as contact_date
     from source
 )
-select * from renamed
+select
+    contact_id,
+    listing_id,
+    contact_source,
+    contact_timestamp,
+    contact_date
+from renamed
