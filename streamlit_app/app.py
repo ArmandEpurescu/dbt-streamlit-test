@@ -130,10 +130,3 @@ with right:
 st.subheader('Latest KPI table')
 show_cols = ['metric_date', 'region', 'property_type', 'active_listing_count', 'leads_count', 'leads_per_active_listing']
 st.dataframe(latest[show_cols].sort_values(['leads_per_active_listing', 'leads_count'], ascending=[False, False]), use_container_width=True)
-
-with st.expander('How to use this in the interview'):
-    st.markdown(
-        '- Say this dashboard sits on top of the dbt mart, not on raw CSVs directly.\n'
-        '- Lead with the KPI trend, then compare the latest snapshot by region and property type.\n'
-        '- Call out that the “active listing” rule is a pragmatic proxy because the source has no explicit status field.'
-    )

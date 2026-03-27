@@ -12,7 +12,6 @@ It is intentionally built as a **local demo** using **CSV seeds + DuckDB + dbt**
 - `snapshots/`: optional Type-2 style snapshot for listing attributes
 - `analyses/business_query.sql`: example business query
 - `profiles.example.yml`: minimal DuckDB profile example
-- `DESIGN_NOTE.*`: 1-2 page write-up for the interview
 
 ## Architecture
 
@@ -250,7 +249,3 @@ For this small KPI mart, a table is appropriate. At larger scale, I would move t
 ## Example business takeaway
 
 In the mock data, **apartments in Île-de-France** show the strongest lead density over the latest 14-day window, while parking inventory is materially weaker. That is enough to illustrate how marketplace, sales, or marketing teams could prioritize inventory types and regions.
-
-## Business readout artifact
-
-See `analyses/business_metric_insights.md` for the narrative version of this KPI: it captures the last 14 days, explains volatility pockets (e.g., Occitanie apartment droughts), and lists the recommended commercial/test actions so BI can plug it directly into executive updates.
